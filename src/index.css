@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap');
+@import "tailwindcss";
+
+:root{
+  --bg:#f0f6f3; --card:#ffffff; --text:#0f291e; --muted:#4b6358;
+  --border:#d4e8df; --primary:#065f46; --primary-dark:#044e39; --primary-light:#eaf6f0;
+  --accent:#d97706; --accent-light:#fffbeb; --danger:#dc2626; --blue:#2563eb; --blue-light:#eff6ff;
+  --radius:16px; --shadow:0 4px 20px rgba(6,78,59,.06);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column}
+::selection{background:var(--primary);color:#fff}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+input,select{font-family:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 16px}
+
+/* ===== Header ===== */
+header{background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50;box-shadow:0 1px 8px rgba(15,23,42,.05)}
+.header-inner{display:flex;align-items:center;gap:12px;padding:10px 16px;flex-wrap:wrap}
+.logo{font-size:20px;font-weight:900;white-space:nowrap}
+.logo span{color:var(--primary)}
+nav{display:flex;gap:4px;flex-wrap:wrap;flex:1;justify-content:center}
+nav button{padding:7px 12px;border-radius:10px;font-size:13px;font-weight:700;color:var(--muted);transition:.15s}
+nav button:hover{background:#f1f5f9;color:var(--text)}
+nav button.active{background:var(--primary);color:#fff}
+.header-stats{display:flex;gap:8px;align-items:center}
+.pill{background:#f1f5f9;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:800;display:flex;align-items:center;gap:5px;white-space:nowrap}
+.pill.xp{background:var(--accent-light);color:var(--accent)}
+.pill.streak{background:#fef2f2;color:var(--danger)}
+.icon-btn{width:38px;height:38px;border-radius:12px;background:#f1f5f9;font-size:17px;display:flex;align-items:center;justify-content:center;transition:.15s}
+.icon-btn:hover{background:#e2e8f0;transform:translateY(-1px)}
+.avatar-btn{font-size:22px;width:42px;height:42px;border-radius:12px;background:var(--primary-light);border:2px solid var(--primary);display:flex;align-items:center;justify-content:center}
+
+/* ===== Main ===== */
+main{flex:1;padding:24px 0}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+.section-title{font-size:22px;font-weight:900;margin-bottom:6px}
+.section-sub{color:var(--muted);font-size:14px;margin-bottom:18px}
+.grid{display:grid;gap:14px}
+.grid-2{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.grid-3{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.grid-4{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:11px 20px;border-radius:12px;font-weight:800;font-size:14px;transition:.15s}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:var(--primary-dark);transform:translateY(-1px);box-shadow:0 4px 12px rgba(5,150,105,.3)}
+.btn-outline{border:2px solid var(--border);color:var(--text);background:#fff}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary)}
+.btn-amber{background:var(--accent);color:#fff}
+.btn-amber:hover{filter:brightness(.93)}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-sm{padding:7px 14px;font-size:13px;border-radius:10px}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none!important;box-shadow:none!important}
+.btn-danger{background:var(--danger);color:#fff;}
+.btn-camera{background:#ee5253;color:#fff;border:none;padding:12px 22px;font-size:15px;font-weight:bold;cursor:pointer;border-radius:10px;transition:.3s;margin:5px;box-shadow:0 4px 12px rgba(238,82,83,.25)}
+.btn-camera:hover{background:#ff6b6b;transform:translateY(-2px);box-shadow:0 6px 16px rgba(238,82,83,.35)}
+.btn-print{background:#10ac84;color:#fff;border:none;padding:12px 22px;font-size:15px;font-weight:bold;cursor:pointer;border-radius:10px;transition:.3s;margin:5px;box-shadow:0 4px 12px rgba(16,172,132,.25)}
+.btn-print:hover{background:#1dd1a1;transform:translateY(-2px);box-shadow:0 6px 16px rgba(16,172,132,.35)}
+.btn-pomodoro{background:#5f27cd;color:#fff;border:none;padding:12px 22px;font-size:15px;font-weight:bold;cursor:pointer;border-radius:10px;transition:.3s;margin:5px;box-shadow:0 4px 12px rgba(95,39,205,.25)}
+.btn-pomodoro:hover{background:#6c5ce7;transform:translateY(-2px);box-shadow:0 6px 16px rgba(95,39,205,.35)}
+
+/* Gamification Banner */
+.gamification{background:#ff9f43;color:white;padding:15px 20px;border-radius:10px;text-align:center;font-size:1.15em;font-weight:bold;margin-bottom:20px;box-shadow:0 4px 15px rgba(255,159,67,.3);animation:gamification-pulse 2.5s infinite}
+@keyframes gamification-pulse{0%{transform:scale(1)}50%{transform:scale(1.02)}100%{transform:scale(1)}}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,#047857 0%,#059669 55%,#34d399 100%);border-radius:var(--radius);color:#fff;padding:30px;position:relative;overflow:hidden;margin-bottom:22px}
+.hero::after{content:'🇩🇿';position:absolute;left:18px;bottom:-24px;font-size:120px;opacity:.14}
+.hero h1{font-size:26px;margin-bottom:8px}
+.hero p{opacity:.92;font-size:15px;max-width:640px;line-height:1.8}
+.hero .hero-stats{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+.hero .hstat{background:rgba(255,255,255,.16);border-radius:12px;padding:10px 16px;font-size:14px;font-weight:800}
+
+/* Level switcher */
+.level-switch{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.level-switch button{flex:1;min-width:150px;padding:14px;border-radius:14px;border:2px solid var(--border);background:#fff;font-weight:900;font-size:15px;transition:.15s;display:flex;flex-direction:column;gap:4px;align-items:center}
+.level-switch button small{font-weight:600;color:var(--muted);font-size:12px}
+.level-switch button.active{border-color:var(--primary);background:var(--primary-light);color:var(--primary-dark)}
+
+/* Feature cards */
+.feature{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;transition:.18s;text-align:right;width:100%}
+.feature:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(15,23,42,.1);border-color:var(--primary)}
+.feature .f-icon{font-size:30px;margin-bottom:10px}
+.feature h3{font-size:16px;margin-bottom:5px}
+.feature p{font-size:13px;color:var(--muted);line-height:1.7}
+
+/* Subjects */
+.subject-card{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--border);border-radius:14px;padding:14px 16px;width:100%;text-align:right;transition:.15s}
+.subject-card:hover{border-color:var(--primary);box-shadow:var(--shadow);transform:translateY(-2px)}
+.subject-card .s-emoji{font-size:26px}
+.subject-card .s-name{font-weight:800;font-size:15px}
+.subject-card .s-desc{font-size:12px;color:var(--muted)}
+
+/* Tabs inside views */
+.tabs{display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap}
+.tabs button{padding:9px 16px;border-radius:11px;font-weight:800;font-size:13px;color:var(--muted);background:#f1f5f9}
+.tabs button.active{background:var(--text);color:#fff}
+
+/* Chat / tutor */
+.chat-box{background:#f8fafc;border:1px solid var(--border);border-radius:14px;padding:16px;max-height:400px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+.msg{padding:11px 15px;border-radius:14px;max-width:85%;font-size:14px;line-height:1.9;white-space:pre-line}
+.msg.user{background:var(--primary);color:#fff;align-self:flex-start;border-bottom-left-radius:4px}
+.msg.ai{background:#fff;border:1px solid var(--border);align-self:flex-end;border-bottom-right-radius:4px}
+.msg.ai .src{display:block;margin-top:8px;font-size:11px;color:var(--muted);border-top:1px dashed var(--border);padding-top:6px}
+.input-row{display:flex;gap:10px}
+.input-row input, .input-row select, .form-group input, .form-group select{flex:1;padding:12px 14px;border:2px solid var(--border);border-radius:12px;font-size:14px;background:#fff}
+.input-row input:focus,.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--primary)}
+
+.back-btn{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-weight:800;font-size:14px;margin-bottom:16px}
+.back-btn:hover{color:var(--primary)}
+.empty-state{text-align:center;padding:40px 20px;color:var(--muted)}
+.empty-state .es-icon{font-size:44px;margin-bottom:12px}
+.progress-xp{height:8px;background:#f1f5f9;border-radius:99px;overflow:hidden;margin-top:8px}
+.progress-xp div{height:100%;background:linear-gradient(90deg,var(--accent),#f59e0b);border-radius:99px}
+footer{background:#fff;border-top:1px solid var(--border);padding:28px 16px;text-align:center;margin-top:30px}
+footer .f-links{display:flex;gap:14px;justify-content:center;font-size:12px;font-weight:700;color:var(--muted);margin-top:10px;flex-wrap:wrap}
+footer .f-links button:hover{color:var(--primary)}
+
+.pulse { animation: pulse-red 2s infinite; }
+@keyframes pulse-red { 0% { opacity:0.7 } 50% { opacity:1; transform: scale(1.05); } 100% { opacity:0.7 } }
+
+@keyframes reward-pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  70% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Handwriting and Notebook styles */
+.handwritten {
+  font-family: 'Aref Ruqaa', serif;
+  font-size: 1.6rem;
+  color: #1e3a8a;
+  line-height: 2.5rem;
+  padding-top: 5px;
+}
+
+.notebook-paper-rtl {
+  background-color: #fafafa;
+  background-image: linear-gradient(#e5e7eb 1px, transparent 1px);
+  background-size: 100% 2.5rem;
+  padding: 2.5rem 3.5rem 2.5rem 1.5rem;
+  border-right: 4px double #f87171;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  min-height: 300px;
+  margin-top: 1rem;
+}
+
+/* Print styles for A4 exams and summaries (مقاس A4 21x29.7) */
+@media print {
+  body {
+    background: white !important;
+    color: #111 !important;
+  }
+  .no-print, header, nav, footer, button, .tabs, .header-stats, .level-switch, .hero, .gamification {
+    display: none !important;
+  }
+  body * {
+    visibility: hidden;
+  }
+  .printable-area, .printable-area *, .print-content, .print-content * {
+    visibility: visible !important;
+  }
+  .printable-area, .print-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 21cm !important;
+    min-height: 29.7cm !important;
+    margin: 0 auto !important;
+    padding: 1.8cm 1.5cm !important;
+    background: white !important;
+    box-shadow: none !important;
+    font-size: 14pt !important;
+    line-height: 1.8 !important;
+    color: #111 !important;
+  }
+}
+

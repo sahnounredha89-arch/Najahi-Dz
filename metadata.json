@@ -1,0 +1,6 @@
+{
+  "name": "نجاحي دجيت",
+  "description": "منصة نجاحي dz التعليمية لجميع الأطوار والمستويات الدراسية في الجزائر",
+  "requestFramePermissions": ["microphone", "camera", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
